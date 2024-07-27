@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: a5e0f7f13fbc8f54a9504df00d114dbc
+  m_SerializeEntries:
+  - m_GUID: 478259e391c620243a84192bf9b953a0
+    m_Address: Assets/ReactionBurst/Prefabs/UI/NavigationPanel/NavigationPanel.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b6dbb735612614b4ab124f35c9c2c40c
+    m_Address: Assets/ReactionBurst/Prefabs/UI/PauseMenu/PauseMenu.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 6b5c7d0c84cec1d4cb85e3da05384892, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 985785594f346b74fa403df79b3668b9, type: 2}
+    - {fileID: 11400000, guid: deadd7d00b96dde4cacbfcf9f2ce2583, type: 2}

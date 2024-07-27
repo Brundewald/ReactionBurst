@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4c83df0402045a2bc4eeaebd860ef40, type: 3}
+  m_Name: UIPrefabProvider
+  m_EditorClassIdentifier: 
+  prefabs:
+  - Name: Canvas
+    PrefabReference:
+      m_AssetGUID: 3a08ad568637e004a8f2f545d5b6a861
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+  - Name: CountdownView
+    PrefabReference:
+      m_AssetGUID: c0c24bd8fe202b64083da12b811b1425
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+  - Name: GameplayView
+    PrefabReference:
+      m_AssetGUID: 4c73d04b69131084386b284e133ab6b1
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+  - Name: NavigationPanel
+    PrefabReference:
+      m_AssetGUID: 478259e391c620243a84192bf9b953a0
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+  - Name: TopBarView
+    PrefabReference:
+      m_AssetGUID: 0743d8164e3f37a4592d7ec924098474
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+  - Name: PauseMenu
+    PrefabReference:
+      m_AssetGUID: b6dbb735612614b4ab124f35c9c2c40c
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+  - Name: Figure
+    PrefabReference:
+      m_AssetGUID: 0f938948d06052c4cb4712c7c34e7d6b
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0

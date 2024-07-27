@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Configs
+  m_EditorClassIdentifier: 
+  m_GroupName: Configs
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 82f0666eabb0f6c48b6c0027ef7a1fc7
+  m_SerializeEntries:
+  - m_GUID: d7b39bb42f6a40f42b52afd682ee5544
+    m_Address: Assets/ReactionBurst/Data/PrefabProvider.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Configs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3d0979d9a5b33914d8c61c57371167fa
+    m_Address: Assets/ReactionBurst/Data/GameData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Configs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f9774a077ab0fa944a7c2211e6522603
+    m_Address: Assets/ReactionBurst/Data/UIPrefabProvider.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Configs
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 6b5c7d0c84cec1d4cb85e3da05384892, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 8a6fc91396eec49448cc82bdddba2021, type: 2}
+    - {fileID: 11400000, guid: 35aa6bc3977227b488a70f29c3e61edd, type: 2}

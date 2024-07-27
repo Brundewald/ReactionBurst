@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ee82239f8384a078920bfd31629d098, type: 3}
+  m_Name: RootInstaller
+  m_EditorClassIdentifier: 
+  audioService: {fileID: 1601937779916178133, guid: 2576d52211fa4a84b9e32e05333b9592, type: 3}

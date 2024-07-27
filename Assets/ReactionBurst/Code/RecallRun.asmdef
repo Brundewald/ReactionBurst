@@ -1,0 +1,29 @@
+{
+    "name": "RecallRun",
+    "rootNamespace": "",
+    "references": [
+        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4",
+        "GUID:a2b76c6e5e0464146af7bbd2cc5e5ab2",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:029c1c1b674aaae47a6841a0b89ad80e",
+        "GUID:6e63775a70496420cbcb1bf3df0fd814",
+        "GUID:3f7e67f59e252460994ff544f18b8cd6",
+        "GUID:42e41a6a2aa64458a8564f222ecea5ad",
+        "GUID:9fb88b6fad741ee46af1dd65350b6c00",
+        "GUID:8eae1ef944a18ff40be12312e19b9edb",
+        "GUID:eec0964c48f6f4e40bc3ec2257ccf8c5",
+        "GUID:3b570a5146f9d4f0fa107ed4559471a3",
+        "GUID:3aa1866a824b5472da50fe142777d95f",
+        "GUID:6c0543a040695ec4f99b5520c7ab3dde"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
