@@ -13,7 +13,7 @@ namespace MyProject.ReactionBurst.Core
 {
     public sealed class GameplayState
     {
-        private readonly IUIService _service;
+        private readonly IUIService _uiService;
         private readonly GameConfig _gameConfig;
         private readonly IAudioService _audioService;
         private readonly Timer _timer;
@@ -31,9 +31,9 @@ namespace MyProject.ReactionBurst.Core
         private int _totalAnswers;
         private int _totalCorrectAnswers;
 
-        public GameplayState(IUIService service, GameConfig gameConfig, IAudioService audioService)
+        public GameplayState(IUIService uiService, GameConfig gameConfig, IAudioService audioService)
         {
-            _service = service;
+            _uiService = uiService;
             _gameConfig = gameConfig;
             _audioService = audioService;
             
@@ -46,7 +46,7 @@ namespace MyProject.ReactionBurst.Core
         {
             await PrepareFlowAsync();
             await GameLoopAsync(token).SuppressCancellationThrow();
-            return (token.IsCancellationRequested, await EndFlow());
+            return (token.IsCancellationRequested, await ExitState());
         }
         
         public void Pause() => 
@@ -57,17 +57,16 @@ namespace MyProject.ReactionBurst.Core
 
         public void Cancel()
         {
-            _timer.StopTimer();
-            //_gamePlayPresenter.KillAnimations();
             HideUI();
+            _timer.StopTimer();
         }
         
         private async UniTask PrepareFlowAsync()
         {
-            _gamePlayPresenter = await _service.ConstructWindowAsync<UI.Gameplay.Presenter>(NameConstants.GameplayView);
+            _gamePlayPresenter = await _uiService.ConstructWindowAsync<UI.Gameplay.Presenter>(NameConstants.GameplayView);
             Assert.IsNotNull(_gamePlayPresenter, nameof(_gamePlayPresenter) + " is null");
             
-            _topBarPresenter = await _service.ConstructWindowAsync<UI.TopBar.Presenter>(NameConstants.TopBarView);
+            _topBarPresenter = await _uiService.ConstructWindowAsync<UI.TopBar.Presenter>(NameConstants.TopBarView);
             Assert.IsNotNull(_topBarPresenter, nameof(_topBarPresenter) + " is null");
 
             SetGameplayData();   
@@ -96,12 +95,9 @@ namespace MyProject.ReactionBurst.Core
             await _timer.WaitForElapse(); 
         }
 
-        private async UniTask<int> EndFlow()
+        private async UniTask<int> ExitState()
         {
-            //if(_director.HasView<GameplayPresenter>())
-            //{
-            //    HideUI();
-            //}
+            HideUI();
 
             _compareService.Clear();
             UnsubscribeFormEvents();
@@ -191,14 +187,14 @@ namespace MyProject.ReactionBurst.Core
 
         private void ShowUI()
         {
-            _service.ShowWindow<UI.Gameplay.Presenter>();
-            _service.ShowWindow<UI.TopBar.Presenter>();
+            _uiService.ShowWindow<UI.Gameplay.Presenter>();
+            _uiService.ShowWindow<UI.TopBar.Presenter>();
         }
 
         private void HideUI()
         {
-            _service.HideWindow<UI.Gameplay.Presenter>();
-            _service.HideWindow<UI.TopBar.Presenter>();
+            _uiService.HideWindow<UI.Gameplay.Presenter>();
+            _uiService.HideWindow<UI.TopBar.Presenter>();
         }
     }
 }

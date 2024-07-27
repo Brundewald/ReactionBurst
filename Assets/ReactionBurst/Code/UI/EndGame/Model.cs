@@ -1,31 +1,18 @@
 ﻿using MyProject.ReactionBurst.Data;
-using MyProject.ReactionBurst.UI;
 
-namespace MyProject.ReactionBurst.Games.RecallRun.EndGame
+namespace MyProject.ReactionBurst.UI.EndGame
 {
     public class Model : BaseModel
     {
-        private int _finalScore;
+        private LeaderBoardData _playerLeaderboardData;
 
-        public int FinalScore
+        public LeaderBoardData PlayerLeaderboardData
         {
-            get => _finalScore;
-            set
-            {  
-                _finalScore = value;
-                OnPropertyChanged(_finalScore);
-            }
-        }
-        
-        private LeaderBoardData _playerLeaderboardScore;
-
-        public LeaderBoardData PlayerLeaderboardScore
-        {
-            get => _playerLeaderboardScore;
+            get => _playerLeaderboardData;
             set
             {
-                _playerLeaderboardScore = value;
-                OnPropertyChanged(_playerLeaderboardScore);
+                _playerLeaderboardData = value;
+                OnPropertyChanged(_playerLeaderboardData);
             }
         }
 

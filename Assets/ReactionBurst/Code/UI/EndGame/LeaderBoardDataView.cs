@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MyProject.ReactionBurst.Games.RecallRun.EndGame
+namespace MyProject.ReactionBurst.UI.EndGame
 {
     public class LeaderBoardDataView : MonoBehaviour
     {
@@ -16,7 +16,7 @@ namespace MyProject.ReactionBurst.Games.RecallRun.EndGame
         {
             _playerName.text = leaderBoardData.Name;
             _playerHighestScore.text = leaderBoardData.HighestScore.ToString();
-            _playerLeaderboardScore.text = leaderBoardData.LeaderboardScore.ToString();
+            _playerLeaderboardScore.text = leaderBoardData.LeaderboardNumber.ToString();
         }
     }
 }

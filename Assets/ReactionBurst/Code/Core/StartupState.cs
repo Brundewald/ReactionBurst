@@ -10,7 +10,7 @@ using Timer = MyProject.ReactionBurst.Core.SubSystems.Timer;
 
 namespace MyProject.ReactionBurst.Core
 {
-    public sealed class StartupFlow
+    public sealed class StartupState
     {
         private readonly IUIService _service;
         private readonly IAudioService _audioService;
@@ -22,7 +22,7 @@ namespace MyProject.ReactionBurst.Core
         private GameConfig _gameConfig;
 
 
-        public StartupFlow(IUIService service, IAudioService audioService, GameConfig gameConfig)
+        public StartupState(IUIService service, IAudioService audioService, GameConfig gameConfig)
         {
             _waitSecondsBeforeStart = gameConfig.SecondsBeforeStart;
             _service = service;
@@ -34,7 +34,7 @@ namespace MyProject.ReactionBurst.Core
         {
             await PrepareAsync();
             await StartCountDownAsync(token).SuppressCancellationThrow();
-            await EndFlow();
+            await ExitState();
             return token.IsCancellationRequested;
         }
 
@@ -64,7 +64,7 @@ namespace MyProject.ReactionBurst.Core
             await _timer.WaitForElapse();
         }
 
-        private async UniTask EndFlow()
+        private async UniTask ExitState()
         {
             _service.HideWindow<Presenter>();
             _timer.TimeChanged -= TimerTick;

@@ -24,7 +24,7 @@ namespace MyProject.ReactionBurst.Core.Subflows
            _audioService = audioService;
        }
         
-       public async UniTask<bool> StartFlowAsync()
+       public async UniTask<bool> StartAsync()
        {
            _cts = new CancellationTokenSource();
            var presenter = _uiService.GetWindow<Presenter>();

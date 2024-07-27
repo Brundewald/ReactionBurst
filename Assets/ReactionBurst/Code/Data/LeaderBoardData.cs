@@ -4,6 +4,6 @@
     {
         public string Name;
         public int HighestScore;
-        public int LeaderboardScore;
+        public int LeaderboardNumber;
     }
 }

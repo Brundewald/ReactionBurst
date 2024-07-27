@@ -62,6 +62,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 64eb3c8f92cc4e74f930d2dc0a66af59
+    m_Address: Assets/ReactionBurst/Prefabs/UI/EndGame/EndGameMenu.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 6b5c7d0c84cec1d4cb85e3da05384892, type: 2}
   m_SchemaSet:

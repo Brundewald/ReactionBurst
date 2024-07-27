@@ -417,12 +417,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c842877f122fc4b4bac297c6b8a3664b
-    m_Address: Assets/TextMesh Pro/Resources/Fonts & Materials/RubikMonoOne-Regular
-      SDF.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2d0d809729a52ef4798b8d32e789eec8
     m_Address: Assets/TextMesh Pro/Fonts/RubikMonoOne-Regular.ttf
     m_ReadOnly: 0

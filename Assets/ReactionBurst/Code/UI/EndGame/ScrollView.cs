@@ -5,11 +5,11 @@ using LitMotion;
 using LitMotion.Extensions;
 using UnityEngine;
 
-namespace MyProject.ReactionBurst.Games.RecallRun.EndGame
+namespace MyProject.ReactionBurst.UI
 {
     public class ScrollView : MonoBehaviour
     {
-        [SerializeField] private Transform _content;
+        [field: SerializeField] public Transform Content { get; private set;}
 
         [Header("Moving item animation settings")]
         [SerializeField] private float _itemMoveDuration = 0.5f;
@@ -18,7 +18,7 @@ namespace MyProject.ReactionBurst.Games.RecallRun.EndGame
         private List<MonoBehaviour> _items = new List<MonoBehaviour>();
         private List<MotionHandle> _handles = new List<MotionHandle>();
 
-        public void FillScroll(List<MonoBehaviour> items)
+        public void FillScroll<T>(List<T> items) where T : MonoBehaviour
         {
             _items.AddRange(items);
         }

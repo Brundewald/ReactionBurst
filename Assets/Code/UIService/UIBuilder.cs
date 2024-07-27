@@ -50,8 +50,9 @@ namespace MyProject.ReactionBurst.UI
             where TPresenter: BasePresenter
         {
             await UniTask.WaitWhile(() => _canvas is null);
-            
-            var parameters = typeof(TPresenter).GetConstructors()[0].GetParameters();
+            var presenterType = typeof(TPresenter);
+            var constructors = presenterType.GetConstructors();
+            var parameters = constructors[0].GetParameters();
 
             BaseView view = null;
             BaseModel model = null;

@@ -49,6 +49,12 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
+  - Name: EndGameMenu
+    PrefabReference:
+      m_AssetGUID: 64eb3c8f92cc4e74f930d2dc0a66af59
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
   - Name: Figure
     PrefabReference:
       m_AssetGUID: 0f938948d06052c4cb4712c7c34e7d6b

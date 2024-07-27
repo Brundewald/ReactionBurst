@@ -20,7 +20,7 @@ namespace MyProject.ReactionBurst.Core
     public sealed class StateMachine : MonoBehaviour
     {
         private NavigationPanelState _navigationState;
-        private StartupFlow _startupFlow;
+        private StartupState _startupState;
         private GameplayState _gameplayState;
         private EndGameState _endGameState;
         private PauseMenuState _pauseState;
@@ -52,7 +52,7 @@ namespace MyProject.ReactionBurst.Core
         private async void Start()
         {
             await Preload();
-            OnLoaded();
+            StartAsync();
         }
 
         private async UniTask Preload()
@@ -64,29 +64,27 @@ namespace MyProject.ReactionBurst.Core
             
             _navigationState = new NavigationPanelState(_uiService, _audioService);
             _pauseState = new PauseMenuState(_uiService, _audioService);
-            _startupFlow = new StartupFlow(_uiService, _audioService, gameData);
+            _startupState = new StartupState(_uiService, _audioService, gameData);
             _gameplayState = new GameplayState(_uiService, gameData, _audioService);
             _endGameState = new EndGameState(_uiService, _audioService, _savedDataService);
-
+            await _endGameState.PreloadAsync();
             SetDataForCollection();
         }
-
-        private void OnLoaded() => StartFlowsAsync();
-
-        private async void StartFlowsAsync()
+        
+        private async void StartAsync()
         {
             _gameRestart = false;
             _audioService.PlayMusic(AudioNameConstants.MainTheme);
             _cts = new CancellationTokenSource();
             
-            await _navigationState.StartFlowAsync();
+            await _navigationState.StartAsync();
             
             SubscribeToEvents();
 
             //if (!isTutorialCompleted)
             //    await RunTutorialSequence();
             
-            var canceled = await _startupFlow.StartAsync(_cts.Token);
+            var canceled = await _startupState.StartAsync(_cts.Token);
 
             var gameResult = 0;
             
@@ -104,21 +102,20 @@ namespace MyProject.ReactionBurst.Core
         private void HandleEndGame()
         {
             if (_gameRestart)
-                StartFlowsAsync();
+                StartAsync();
             else
-                EndFlow();
+                ReleaseAssets();
         }
 
-        private void EndFlow()
+        private void ReleaseAssets()
         {
             //Освобождаем ресурсы и останавливаем процессы игры
             _audioService.Release();
-            //TweenPauseTokenHolder.ClearInstance();
-            //Если запущено из коллекции, то возвращаемся в нее
-            if(_sceneProvider != null && _sceneProvider.HasSceneData)
-            {
-                FindObjectOfType<SceneProvider>().LoadScene("Collection");
-            }
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
         }
         
         private async UniTask RunTutorialSequence()
@@ -138,7 +135,7 @@ namespace MyProject.ReactionBurst.Core
         private void OnGamePaused()
         {
             LitMotionControlExtension.PauseMotion();
-            _startupFlow.Pause();
+            _startupState.Pause();
             _gameplayState.Pause();
         }
 
@@ -147,7 +144,7 @@ namespace MyProject.ReactionBurst.Core
             if(!gameSkipped)
             {
                 LitMotionControlExtension.UnpauseMotion();
-                _startupFlow.Continue();
+                _startupState.Continue();
                 _gameplayState.Continue();
             }
             else
@@ -178,7 +175,7 @@ namespace MyProject.ReactionBurst.Core
         private void CancelFlows()
         {
             UnsubscribeToEvents();
-            _startupFlow.Cancel();
+            _startupState.Cancel();
             _gameplayState.Cancel();
             _navigationState.Cancel();
         }

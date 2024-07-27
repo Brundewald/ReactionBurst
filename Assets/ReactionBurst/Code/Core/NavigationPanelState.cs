@@ -28,7 +28,7 @@ namespace MyProject.ReactionBurst.Core.Subflows
             _pauseMenuState = new PauseMenuState(uiService, audioService);
         }
 
-        public async UniTask StartFlowAsync()
+        public async UniTask StartAsync()
         {
             await PrepareAsync();
             await RunInBackGroundAsync();
@@ -71,7 +71,7 @@ namespace MyProject.ReactionBurst.Core.Subflows
 
             bool canceled;
             
-            (canceled, _gameSkipped) = await _pauseMenuState.StartFlowAsync().SuppressCancellationThrow();
+            (canceled, _gameSkipped) = await _pauseMenuState.StartAsync().SuppressCancellationThrow();
             
             if(!canceled) UnpauseGame();
         }
@@ -81,9 +81,9 @@ namespace MyProject.ReactionBurst.Core.Subflows
             if(_pauseMenuState.isActive) 
                 return;
 
-            _infoButtonPressed = true;
+            //_infoButtonPressed = true;
             //_audioService.PlaySound(SharedSFXNames.Click).Forget();
-            GamePaused.Invoke();
+            //GamePaused.Invoke();
             //_sharedDirector.TutorialPlayButtonPressed += UnpauseGame;
             //_sharedDirector.ShowTutorialView(false);
         }
@@ -111,7 +111,7 @@ namespace MyProject.ReactionBurst.Core.Subflows
         private void SubscribeToEvents()
         {
             _navigationPanel.PauseButtonPressed += OnPauseButtonPressed;
-            //_sharedDirector.InfoButtonPressed += OnInfoButtonPressed;
+            _navigationPanel.InfoButtonPressed += OnInfoButtonPressed;
             _pauseMenu.SFXStateChanged += OnSoundStateChanged;
             _pauseMenu.MusicStateChanged += OnMusicStateChanged;
             _pauseMenu.RestartButtonPressed += OnRestartButtonPressed;
@@ -120,7 +120,7 @@ namespace MyProject.ReactionBurst.Core.Subflows
         private void UnsubscribeToEvents()
         {
             _navigationPanel.PauseButtonPressed -= OnPauseButtonPressed;
-            //_sharedDirector.InfoButtonPressed += OnInfoButtonPressed;
+            _navigationPanel.InfoButtonPressed += OnInfoButtonPressed;
             _pauseMenu.SFXStateChanged -= OnSoundStateChanged;
             _pauseMenu.MusicStateChanged -= OnMusicStateChanged;
             _pauseMenu.RestartButtonPressed -= OnRestartButtonPressed;

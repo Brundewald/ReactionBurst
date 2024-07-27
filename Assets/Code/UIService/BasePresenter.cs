@@ -23,7 +23,7 @@ namespace MyProject.ReactionBurst.UI
             _model.PropertyChanged += UpdateView;
         }
 
-        public void Dispose()
+        public virtual void Dispose()
         {
             _view.Hiden -= OnViewHided;
             _model.PropertyChanged -= UpdateView;
