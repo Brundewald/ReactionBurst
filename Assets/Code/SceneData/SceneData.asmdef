@@ -1,0 +1,14 @@
+{
+    "name": "SceneData",
+    "rootNamespace": "MagicSolutions.BrainTraining.Shared.SceneData",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

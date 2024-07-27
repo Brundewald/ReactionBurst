@@ -1,0 +1,17 @@
+{
+    "name": "AudiolizationServiceExample",
+    "rootNamespace": "MagicSolutions.BrainTraining.Shared.AudiolizationService",
+    "references": [
+        "GUID:a2b76c6e5e0464146af7bbd2cc5e5ab2",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

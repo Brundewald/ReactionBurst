@@ -1,0 +1,21 @@
+{
+    "name": "UIService",
+    "rootNamespace": "MagicSolutions.BrainTraining.Shared.UIService",
+    "references": [
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4",
+        "GUID:8eae1ef944a18ff40be12312e19b9edb",
+        "GUID:254f63491c548c045b11b6abdf6ecd8a",
+        "GUID:9663b398832166448a47ee3b819ec773",
+        "GUID:9e24947de15b9834991c9d8411ea37cf"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
