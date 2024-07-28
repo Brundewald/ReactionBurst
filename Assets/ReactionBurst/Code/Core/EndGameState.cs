@@ -1,10 +1,8 @@
 using Cysharp.Threading.Tasks;
 using MyProject.ReactionBurst.AudiolizationService;
-using MyProject.ReactionBurst.Constants;
 using MyProject.ReactionBurst.SaveLoad;
 using MyProject.ReactionBurst.UI;
 using MyProject.ReactionBurst.UI.EndGame;
-using Shared_Code.SharedConstants;
 
 namespace MyProject.ReactionBurst.Core
 {
@@ -48,7 +46,7 @@ namespace MyProject.ReactionBurst.Core
 
         private async UniTask<bool> ShowEndGameAsync()
         {
-            _presenter.Show();
+            _uiService.ShowWindow<Presenter>();
             await _presenter.OpenAnimationAsync();
             //_audioService.PlaySound(AudioNameConstants.LevelCompleted).Forget();
             await UniTask.WaitUntil(() => _closed || _restart);
@@ -56,28 +54,30 @@ namespace MyProject.ReactionBurst.Core
             return _restart;
         }
 
-        private void OnExitButtonPressed()
-        {
-            //_audioService.PlaySound(SharedSFXNames.Click).Forget();
-            _closed = true;
-        }
-
-        private void OnRestartButtonPressed()
-        {
-            //_audioService.PlaySound(SharedSFXNames.Click).Forget();
-            _restart = true;
-        }
-
         private void SubscribeToEvents()
         {
-            _presenter.ExitButtonPressed += OnRestartButtonPressed;
-            _presenter.RetryButtonPressed += OnExitButtonPressed;
+            _presenter.ExitButtonPressed += HandleExitButtonPressed;
+            _presenter.RetryButtonPressed += HandleRestartButtonPressed;
         }
 
         private void UnsubscribeFromEvents()
         {
-            _presenter.ExitButtonPressed -= OnRestartButtonPressed;
-            _presenter.RetryButtonPressed -= OnExitButtonPressed;
+            _presenter.ExitButtonPressed -= HandleExitButtonPressed;
+            _presenter.RetryButtonPressed -= HandleRestartButtonPressed;
+        }
+        
+        private void HandleExitButtonPressed()
+        {
+            //_audioService.PlaySound(SharedSFXNames.Click).Forget();
+            _uiService.HideWindow<Presenter>();
+            _closed = true;
+        }
+
+        private void HandleRestartButtonPressed()
+        {
+            //_audioService.PlaySound(SharedSFXNames.Click).Forget();
+            _uiService.HideWindow<Presenter>();
+            _restart = true;
         }
 
         private void SaveProgress(int resultScore)

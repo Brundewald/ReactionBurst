@@ -97,11 +97,13 @@ namespace MyProject.ReactionBurst.UI.EndGame
 
         private void OnRetryButtonClick() => RetryButtonPressed.Invoke();
 
-        private void OnResultButtonClick() => _visualization.PlaySwitchToResultAsync().Forget();
-
-        private async void OnLeaderBoardButtonClick()
+        private async void OnResultButtonClick()
         {
             await _visualization.PlaySwitchToResultAsync();
+        }
+        private async void OnLeaderBoardButtonClick()
+        {
+            await _visualization.PlaySwitchToLeaderBoardAsync();
             //_scrollView.MoveItemAsync();
         }
     }

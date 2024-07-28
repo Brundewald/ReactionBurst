@@ -20,7 +20,12 @@ namespace MyProject.ReactionBurst.UI
 
         public void FillScroll<T>(List<T> items) where T : MonoBehaviour
         {
-            _items.AddRange(items);
+            foreach (var item in items)
+            {
+                item.transform.SetParent(Content);
+            }
+
+            _items = items as List<MonoBehaviour>;
         }
 
         public void ClearAndReturnItems(out List<MonoBehaviour> items)

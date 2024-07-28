@@ -70,7 +70,8 @@ namespace MyProject.ReactionBurst.UI.Visualization.Countdown
                 .AddTo(this)
                 .RegisterActiveHandle();;
 
-            await UniTask.Delay(TimeSpan.FromSeconds(_fadeStayDuration), cancellationToken: _token);
+            await UniTask.Delay(TimeSpan.FromSeconds(_fadeStayDuration), cancellationToken: _token)
+                .SuppressCancellationThrow();
             
             await LMotion.Create(Vector3.one, Vector3.zero, _scaleInDuration)
                 .WithEase(_scaleInCurve)

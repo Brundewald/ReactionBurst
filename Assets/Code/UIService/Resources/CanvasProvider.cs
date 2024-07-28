@@ -7,5 +7,11 @@ namespace MyProject.ReactionBurst.UI
     {
         [SerializeField] private Canvas _canvas;
         public Canvas Canvas => _canvas;
+
+        private void Awake()
+        { 
+            var worldCamera = Camera.main;
+            _canvas.worldCamera = worldCamera;
+        }
     }
 }

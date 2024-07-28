@@ -13,22 +13,24 @@ MonoBehaviour:
   m_Name: GameData
   m_EditorClassIdentifier: 
   <SecondsBeforeStart>k__BackingField: 3
-  <LevelDurationInSeconds>k__BackingField: 60
+  <LevelDurationInSeconds>k__BackingField: 20
   <DefaultScore>k__BackingField: 50
   <DefaultScoreModifier>k__BackingField: 1
   <ScoreIncreaseSequenceLength>k__BackingField: 5
   <MaxScore>k__BackingField: 10000
   <StartMarkScore>k__BackingField: 10000
   <Notation>k__BackingField:
-    mTerm: RecallRun/NotationKey
-    mRTL_IgnoreArabicFix: 0
-    mRTL_MaxLineLength: 0
-    mRTL_ConvertNumbers: 0
-    m_DontLocalizeParameters: 0
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   <GeneratorData>k__BackingField:
     <InitialScrollLength>k__BackingField: 5
-    <FigurePoolQuantity>k__BackingField: 10
-    <DefaultGeneratorRange>k__BackingField: 2
+    <DefaultGeneratorRange>k__BackingField: 3
     <RangeIncreasingValue>k__BackingField: 1
     <ColorVariants>k__BackingField:
     - {r: 0.24313727, g: 0.48235297, b: 0.9803922, a: 1}
@@ -59,3 +61,6 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 138c778470b8fd04abf5f1781a852a2a, type: 3}
     - {fileID: 21300000, guid: 895e8bd9d9114a84e82b7f7bb341d7f3, type: 3}
     - {fileID: 21300000, guid: bcb661a30a03b8b45afb2b99204cafc3, type: 3}
+  references:
+    version: 2
+    RefIds: []

@@ -91,11 +91,14 @@ namespace MyProject.ReactionBurst.UI
         {
             var type  = typeof(T);
             
-            if (!_forShow.ContainsKey(type))
+            if (!_forShow.ContainsKey(type) && !_opened.ContainsKey(type))
             {
                 Debug.LogWarning("[BaseDirector] OpenView fail: "+ type);
                 return default;
             }
+            
+            if(_opened.ContainsKey(type))
+                return _opened[type] as T;
 
             //Debug.Log("[BaseDirector] OpenView "+viewName);
             _opened.Add(type, _forShow[type]);

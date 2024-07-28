@@ -53,7 +53,13 @@ namespace Code.Utilities
         public static void CancelMotion()
         {
             _isPaused = false;
-            _activeHandles.ForEach(handle => handle.Cancel());
+            for (var i = 0; i < _activeHandles.Count; i++)
+            {
+                var handle = _activeHandles[i];
+                if (handle.IsActive())
+                    handle.Cancel();
+            }
+
             _activeHandles.Clear();
         }
     }

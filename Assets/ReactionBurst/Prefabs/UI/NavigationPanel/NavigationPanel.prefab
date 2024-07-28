@@ -431,6 +431,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3377775086255900182}
   - component: {fileID: 1814973777170381736}
+  - component: {fileID: 5292723485504560576}
+  - component: {fileID: 6998572046009198387}
   m_Layer: 5
   m_Name: NavigationPanel
   m_TagString: Untagged
@@ -476,6 +478,46 @@ MonoBehaviour:
   _categoryInfoContainer: {fileID: 0}
   _categoryNameText: {fileID: 0}
   _categoryIconImage: {fileID: 0}
+--- !u!223 &5292723485504560576
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6829319355536486177}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!114 &6998572046009198387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6829319355536486177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 32
 --- !u!1 &7785451771290063490
 GameObject:
   m_ObjectHideFlags: 0

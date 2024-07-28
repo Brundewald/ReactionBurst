@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: -7442661660561875161}
   - component: {fileID: 8013983939643272020}
   - component: {fileID: 7972665757584455668}
-  - component: {fileID: 1345041556735007970}
+  - component: {fileID: -6170082587589207253}
+  - component: {fileID: -7174964694977473113}
   m_Layer: 5
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -63,7 +64,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 150
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &-7442661660561875161
 MonoBehaviour:
@@ -141,7 +142,24 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &1345041556735007970
+--- !u!114 &-6170082587589207253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404993130250410996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 32
+--- !u!114 &-7174964694977473113
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
